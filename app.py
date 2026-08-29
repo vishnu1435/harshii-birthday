@@ -23,90 +23,15 @@ if "verdict_accepted" not in st.session_state:
 
 
 # ============================================================
-# CUSTOM CSS
-# ============================================================
-
-st.markdown("""
-<style>
-    .main {
-        background-color: #f7f7f5;
-    }
-    .court-title {
-        text-align: center;
-        font-size: 38px;
-        font-weight: 800;
-        letter-spacing: 1px;
-        margin-bottom: 5px;
-    }
-    .court-subtitle {
-        text-align: center;
-        color: #666;
-        font-size: 16px;
-        margin-bottom: 30px;
-    }
-    .legal-box {
-        background: white;
-        padding: 30px;
-        border-radius: 12px;
-        border: 1px solid #ddd;
-        box-shadow: 0px 4px 15px rgba(0,0,0,0.06);
-        margin-bottom: 20px;
-    }
-    .case-number {
-        text-align: right;
-        color: #777;
-        font-size: 13px;
-    }
-    .charge {
-        padding: 12px 15px;
-        background: #fafafa;
-        border-left: 4px solid #333;
-        margin: 10px 0;
-        border-radius: 5px;
-    }
-    .verdict {
-        text-align: center;
-        padding: 25px;
-        background: #fff;
-        border-radius: 12px;
-        border: 2px solid #222;
-        margin-top: 25px;
-    }
-    .big-wish {
-        text-align: center;
-        font-size: 30px;
-        font-weight: 800;
-        margin-top: 20px;
-    }
-    .small-note {
-        text-align: center;
-        color: #777;
-        font-size: 14px;
-    }
-    .captcha-title {
-        text-align: center;
-        font-size: 35px;
-        font-weight: 800;
-        margin-top: 80px;
-    }
-</style>
-""", unsafe_allow_html=True)
-
-
-# ============================================================
 # LOCKED STATE
 # ============================================================
 
 if not st.session_state.unlocked:
 
-    st.markdown(
-        '<div class="captcha-title">🔐 SECURITY CLEARANCE REQUIRED</div>',
-        unsafe_allow_html=True
-    )
-
+    st.markdown("<h2 style='text-align:center;'>🔐 SECURITY CLEARANCE REQUIRED</h2>", unsafe_allow_html=True)
     st.markdown(
         """
-        <p style="text-align:center;color:#777;">
+        <p style="text-align:center;color:gray;">
         HIGH COURT OF BENGALURU — Restricted Birthday File<br>
         Identity verification required before accessing classified material.
         </p>
@@ -142,7 +67,7 @@ if not st.session_state.unlocked:
                 st.error("Liar. Try again.")
 
     st.write("")
-    st.caption("⚠️ Unauthorized access will be reported to the imaginary Registrar.")
+    st.markdown("<p style='text-align:center;color:gray;font-size:12px;'>⚠️ Unauthorized access will be reported to the imaginary Registrar.</p>", unsafe_allow_html=True)
     st.stop()
 
 
@@ -150,125 +75,66 @@ if not st.session_state.unlocked:
 # UNLOCKED STATE (MAIN LEGAL DOCUMENT)
 # ============================================================
 
-st.markdown(
-    '<div class="court-title">⚖️ HIGH COURT OF BENGALURU</div>',
-    unsafe_allow_html=True
-)
+st.markdown("<h1 style='text-align:center;'>⚖️ HIGH COURT OF BENGALURU</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center;color:gray;'>SPECIAL BIRTHDAY BENCH • CLASSIFIED CASE FILE</p>", unsafe_allow_html=True)
 
-st.markdown(
-    '<div class="court-subtitle">SPECIAL BIRTHDAY BENCH • CLASSIFIED CASE FILE</div>',
-    unsafe_allow_html=True
-)
+with st.container(border=True):
+    st.markdown("<p style='text-align:right;color:gray;font-size:12px;'>CASE NO. 21/2026 • BIRTHDAY BENCH</p>", unsafe_allow_html=True)
+    
+    st.markdown("<h2 style='text-align:center;'>SPECIAL BIRTHDAY DECREE</h2>", unsafe_allow_html=True)
+    
+    st.divider()
 
-st.markdown(
-    '<div class="legal-box">',
-    unsafe_allow_html=True
-)
+    st.markdown("### 👩‍⚖️ IN THE MATTER OF:\n**The State of Junior Affairs**  \n**Vs.**  \n**Harshiii, Age 21**")
+    
+    st.divider()
 
-st.markdown(
-    '<div class="case-number">CASE NO. 21/2026 • BIRTHDAY BENCH</div>',
-    unsafe_allow_html=True
-)
+    st.markdown("### 🧑‍⚖️ DEFENDANT\n**Name:** Harshiii  \n**Age:** 21  \n**Occupation:** Law Student / Intern  \n**Current Status:** Suspiciously senior.")
+    
+    st.divider()
 
-st.markdown(
-    """
-    <h2 style="text-align:center;">
-    HIGH COURT OF BENGALURU<br>
-    SPECIAL BIRTHDAY DECREE
-    </h2>
-    """,
-    unsafe_allow_html=True
-)
+    st.markdown("### 📜 CHARGES FILED")
+    
+    st.error("**Charge 1 — Section 420**  \nScamming an innocent junior out of a promised coffee.")
+    st.error("**Charge 2 — Section 420.1**  \nFleeing the scene immediately after asking for flowers.")
+    st.error("**Charge 3 — Section 420.2**  \nUnlawful intimidation for scolding of an innocent & cute junior.")
+    st.error("**Charge 4 — Special Provision**  \nBeing unnecessarily cute while pretending to be extremely serious.")
+    
+    st.divider()
 
-st.markdown("---")
+    st.markdown("### 🔎 EVIDENCE ON RECORD")
+    
+    st.markdown("**Exhibit A:** The coffee that was promised but never delivered. ☕")
+    st.markdown("**Exhibit B:** Flowers are waiting to be presented to the accused. 🌷")
+    st.markdown("**Exhibit C:** Scolding the innocent pyara cute junior.")
+    st.markdown("**Exhibit D:** Witness testimony confirming that the accused melts over puppies. 🐶")
+    
+    st.divider()
 
-st.markdown("""
-### 👩‍⚖️ IN THE MATTER OF:
+    st.markdown("### ⚖️ OBSERVATION OF THE COURT")
+    st.info("After carefully examining the evidence, the Court finds that the accused is:\n\n> **Guilty of being 21, unnecessarily adorable, and extremely difficult to impress.**\n\nHowever, considering the accused's birthday, the Court is inclined to show mercy.")
 
-**The State of Junior Affairs**  
-**Vs.**  
-**Harshiii, Age 21**
-
----
-
-### 🧑‍⚖️ DEFENDANT
-
-**Name:** Harshiii  
-**Age:** 21  
-**Occupation:** Law Student / Intern  
-**Current Status:** Suspiciously senior.
-
----
-
-### 📜 CHARGES FILED
-
-<div class="charge">
-<b>Charge 1 — Section 420</b><br>
-Scamming an innocent junior out of a promised coffee.
-</div>
-
-<div class="charge">
-<b>Charge 2 — Section 420.1</b><br>
-Fleeing the scene immediately after asking for flowers.
-</div>
-
-<div class="charge">
-<b>Charge 3 — Section 420.2</b><br>
-Unlawful intimidation for scolding of an innocent & cute junior.
-</div>
-
-<div class="charge">
-<b>Charge 4 — Special Provision</b><br>
-Being unnecessarily cute while pretending to be extremely serious.
-</div>
-
----
-
-### 🔎 EVIDENCE ON RECORD
-
-**Exhibit A:** The coffee that was promised but never delivered. ☕  
-**Exhibit B:** Flowers are wating to presente to the accused. 🌷  
-**Exhibit C:** scolding the inocent pyara cute junior.  
-**Exhibit D:** Witness testimony confirming that the accused melts over puppies. 🐶
-
----
-
-### ⚖️ OBSERVATION OF THE COURT
-
-After carefully examining the evidence, the Court finds that the accused is:
-
-> **Guilty of being 21, unnecessarily adorable, and extremely difficult to impress.**
-
-However, considering the accused's birthday, the Court is inclined to show mercy.
-
-""", unsafe_allow_html=True)
-
-st.markdown('</div>', unsafe_allow_html=True)
-
+st.write("")
 
 # ============================================================
 # VERDICT
 # ============================================================
 
-# ============================================================
-# VERDICT
-# ============================================================
-
-st.markdown(
-    """
-    <div class="verdict" style="background-color: white; color: black;">
-        <h2 style="color: black;">⚖️ FINAL VERDICT</h2>
-        <p style="color: black;">
+with st.container(border=True):
+    st.markdown("<h2 style='text-align:center;'>⚖️ FINAL VERDICT</h2>", unsafe_allow_html=True)
+    st.markdown(
+        """
+        <p style='text-align:center;'>
         order enandre: ivatthu full khushiyagi irbeku, sakkath aagi thindu enjoy madbeku. 
         and please, ondh dina aadru innocent juniors ge baiyodu nilsi boss 😂
         </p>
-        <p style="color: black;">
-        <b style="color: black;">Further proceedings are suspended until coffee is produced.</b> ☕
+        <p style='text-align:center;'>
+        <b>Further proceedings are suspended until coffee is produced.</b> ☕
         </p>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+        """,
+        unsafe_allow_html=True
+    )
+
 st.write("")
 
 if not st.session_state.verdict_accepted:
@@ -284,10 +150,7 @@ if not st.session_state.verdict_accepted:
 if st.session_state.verdict_accepted:
     st.divider()
 
-    st.markdown(
-        '<div class="big-wish">🎉 HAPPY 21ST HARSHIII! 🎉</div>',
-        unsafe_allow_html=True
-    )
+    st.markdown("<h1 style='text-align:center;'>🎉 HAPPY 21ST HARSHIII! 🎉</h1>", unsafe_allow_html=True)
 
     st.markdown(
         """
@@ -308,7 +171,7 @@ if st.session_state.verdict_accepted:
         with col2:
             st.image(puppy, caption="Exhibit E — The only witnesses the Court trusts.", use_container_width=True)
     except Exception:
-        st.info("🐶 Exhibit E (puppy_pic.jpg) is currently unavailable. The Court suspects the puppies are on recess.")
+        st.warning("🐶 Exhibit E is missing! Double check that the file on GitHub is named EXACTLY 'puppy_pic.jpg' with no capital letters or double extensions.")
 
     st.success(
         "happy 21st harshiii ✨ pls don't run away from this website like u ran away from the flowers 😂 "
@@ -317,7 +180,7 @@ if st.session_state.verdict_accepted:
     
     st.markdown(
         """
-        <p class="small-note">
+        <p style="text-align:center;color:gray;">
         — From your favourite junior (allegedly) ⚖️
         </p>
         """,
