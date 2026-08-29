@@ -250,22 +250,25 @@ st.markdown('</div>', unsafe_allow_html=True)
 # VERDICT
 # ============================================================
 
+# ============================================================
+# VERDICT
+# ============================================================
+
 st.markdown(
     """
-    <div class="verdict">
-        <h2>⚖️ FINAL VERDICT</h2>
-        <p>
+    <div class="verdict" style="background-color: white; color: black;">
+        <h2 style="color: black;">⚖️ FINAL VERDICT</h2>
+        <p style="color: black;">
         order enandre: ivatthu full khushiyagi irbeku, sakkath aagi thindu enjoy madbeku. 
         and please, ondh dina aadru innocent juniors ge baiyodu nilsi boss 😂
         </p>
-        <p>
-        <b>Further proceedings are suspended until coffee is produced.</b> ☕
+        <p style="color: black;">
+        <b style="color: black;">Further proceedings are suspended until coffee is produced.</b> ☕
         </p>
     </div>
     """,
     unsafe_allow_html=True
 )
-
 st.write("")
 
 if not st.session_state.verdict_accepted:
