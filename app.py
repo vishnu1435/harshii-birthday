@@ -8,7 +8,7 @@ from PIL import Image
 st.set_page_config(
     page_title="Harshiii v. The Junior",
     page_icon="⚖️",
-    layout="centered", # Changed to centered so the document looks better without a sidebar
+    layout="centered",
 )
 
 # ============================================================
@@ -121,14 +121,9 @@ if not st.session_state.unlocked:
         st.caption("Only the actual accused party should be able to pass this test.")
 
         q1 = st.radio(
-            "Question 1 — What is the appropriate response when someone brings you flowers at the High Court?",
+            "Security Question — What is the appropriate response when someone brings you flowers at the High Court?",
             ["Say thank you politely", "Running behind the senior"],
             index=None
-        )
-
-        q2 = st.text_input(
-            "Question 2 — Who is the undisputed Dove Raja?",
-            placeholder="Enter your answer..."
         )
 
         st.write("")
@@ -140,10 +135,7 @@ if not st.session_state.unlocked:
         )
 
         if unlock:
-            correct_q1 = q1 == "Running behind the senior"
-            correct_q2 = q2.strip().lower() in ["junior", "vishnu"]
-
-            if correct_q1 and correct_q2:
+            if q1 == "Running behind the senior":
                 st.session_state.unlocked = True
                 st.rerun()
             else:
@@ -254,9 +246,6 @@ However, considering the accused's birthday, the Court is inclined to show mercy
 st.markdown('</div>', unsafe_allow_html=True)
 
 
-# ============================================================
-# VERDICT
-# ============================================================
 # ============================================================
 # VERDICT
 # ============================================================
